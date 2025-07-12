@@ -65,20 +65,16 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
+            'port' => env('DB_PORT', '26257'),
+            'database' => env('DB_DATABASE', 'defaultdb'),
+            'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
-            'sslmode' => 'prefer',
-            'options'   => extension_loaded('pdo_pgsql') ? array_filter([
-                PDO::PGSQL_ATTR_SSL_MODE => env('DB_OPTIONS')
-            ]) : [],
+            'sslmode' => 'require',
         ],
 
         'sqlsrv' => [

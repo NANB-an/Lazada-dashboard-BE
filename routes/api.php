@@ -21,3 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/test', function () {
     return response()->json(['status' => 'OK']);
 });
+
+Route::get('/protected-test', function (){
+    return response()->json(['message' => 'You are verified']);
+})->middleware('firebase');
+
+Route::middleware(['firebase'])->group(function (){
+// put all protected api here for protection
+
+
+});
+
+Route::get('/auth/lazada/redirect', [LazadaAuthController::class, 'redirect']);
+Route::get('/auth/lazada/callback', [LazadaAuthController::class, 'callback']);

@@ -30,4 +30,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'lazada' => [
+    'client_id' => env('LAZADA_CLIENT_ID'),
+    'client_secret' => env('LAZADA_CLIENT_SECRET'),
+    'redirect_uri' => env('LAZADA_REDIRECT_URI'),
+    
+    ],
+
+
 ];
